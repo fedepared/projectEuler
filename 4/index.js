@@ -1,17 +1,39 @@
-let esPalin=true;
+let esPalin=false;
 let arr=[]
-function palindromo(num){
+function palindromo(num,esPalin){
     let reves=[];
     let i=0;
+    let derecho="";
+    let alreves="";
     for(let j=num.length-1;j>=0;j--){
         reves[i]=num[j];
         i++;
+        // console.log(reves);
     }
-    for(let k=0;k<num.length;k++){
-        if(num[k]!=reves[k]){
-            esPalin=false;
-        }
+    for(let k=0;k<reves.length;k++){
+        alreves += reves[k];
+        
+        derecho += num[k];
     }
+
+    
+    console.log(alreves);
+    console.log(derecho);
+    console.log(esPalin)
+    if(derecho==alreves){
+         return esPalin=true;
+        //  console.log("es Palindromo")
+    }
+     else{
+         return esPalin=false;
+        //  console.log("No es Palindromo")
+     }
+    
+    // // for(let k=0;k<num.length;k++){
+    // //     if(num[k]!=reves[k]){
+    // //         esPalin=false;
+    // //     }
+    // // }
 }
 
 function arrayNumber(arr,num){    
@@ -24,12 +46,18 @@ function arrayNumber(arr,num){
     arr.unshift(num);
 }
 
-function multiplicar(arr){
-    let j=999;
-    for (let i = 999; i >= 200; i--) {
-        let producto=i*j;
+function multiplicar(arr,esPalin){
+    let max=-1;
+    for (let i = 999; i <= 100; i--) {
+        for (let j = 999; j <= 100; j--) {
+            let producto=i*j;
+            if(max<p && palindromo(produto)){
+                max=p;
+            }
+        }
+        
         arrayNumber(arr,producto);
-        palindromo(arr);
+        palindromo(arr,esPalin);
         console.log(i,j,arr,esPalin);
 
         if(j>i){
@@ -46,5 +74,5 @@ function multiplicar(arr){
     }
 }
 
-multiplicar(arr);
+multiplicar(arr,esPalin)
 
